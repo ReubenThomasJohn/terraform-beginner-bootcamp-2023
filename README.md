@@ -137,3 +137,52 @@ If it is successful, you should see a json payload return that looks like this:
     "Arn": "arn:aws:iam::123456789012:user/terraform-beginner-bootcamp"
 }
 ```
+
+## Terraform Basics
+
+### Terraform Registry
+
+Terraform sources their providers and modules from the terraform registry which is location at [registry.terraform.io](https://registry.terraform.io/)
+
+- **Providers** are interfaces to APIs that allow us to create resources in terraform
+- **Modules** are a way to make large amounts of terraform code modular, portable and shareable.
+
+### Terraform Console
+
+We can see a list of all the tf commands by simple typing `terraform`
+
+#### `Terraform Init`
+At the start of a new tf project, we will run `terraform init` to download the binaries for the terraform providers that we'll use in the project. 
+
+#### Terraform Plan
+
+This will generate a changeset, about the state of our infrastructure and what will be changed.
+
+We can output this changeset ie. "plan" to be passed to an apply, but often you can ignore outputting.
+
+#### Terraform Apply
+
+This will run a plan and pass the changeset to be executed by terraform. Apply should prompt us yes or no.
+
+If we want to automatically approve an apply, we can provide the auto approve flag. ie. `terraform apply --auto-approve`
+
+### Terraform Lock Files
+
+`.terraform.lock.hcl` contains the locked versionining for the providers or modules that should be used witrh this project.
+
+The Terraform Lock file should be commited to your Version Control System. Eg. Github
+
+### Terraform State Files
+
+`.terraform.tfstate` contains information about the current state of infrastructure.
+
+This file **should not be commited** to VCS.
+
+This file can contain sensitive data.
+If you lose this file, you lose knowing the state of infrastructure.
+
+`.terraform.tfstate.backup` is the previous state file state.
+
+### Terraform Directory
+
+`.terraform/` contains the required binaries. 
