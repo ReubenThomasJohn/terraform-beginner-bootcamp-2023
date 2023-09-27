@@ -18,7 +18,7 @@ The general format:
 
 ---
 
-## General workflow:
+## General workflow: (Needs to be updated)
 
 1. Open an issue, keep the issue heading short
 2. Create a new branch with the same name as the issue.
