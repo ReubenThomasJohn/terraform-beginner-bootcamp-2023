@@ -215,3 +215,6 @@ Provide the following code (replace the code in the file)
     }
 }
 ```
+
+We have automated the terraform login process using the bash script:
+[bin/generate_tfrc_credentials.sh](bin/generate_tfrc_credentials.sh)
