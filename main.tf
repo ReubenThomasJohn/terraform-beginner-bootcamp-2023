@@ -1,4 +1,19 @@
 terraform {
+  # backend "remote" {
+  #   hostname = "app.terraform.io"
+  #   organization = "terraform-beginners-bootcamp"
+
+  #   workspaces {
+  #     name = "terra-house-1"
+  #   }
+  # }
+  cloud {
+    organization = "terraform-beginners-bootcamp"
+
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
   required_providers {
     random = {
       source = "hashicorp/random"
@@ -16,10 +31,10 @@ provider "random" {
 }
 
 resource "random_string" "bucket_name" {
-  lower = true
-  upper = false
-  length           = 32
-  special          = false
+  lower   = true
+  upper   = false
+  length  = 32
+  special = false
 }
 
 resource "aws_s3_bucket" "example" {
