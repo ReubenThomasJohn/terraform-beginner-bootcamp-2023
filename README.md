@@ -218,3 +218,10 @@ Provide the following code (replace the code in the file)
 
 We have automated the terraform login process using the bash script:
 [bin/generate_tfrc_credentials.sh](bin/generate_tfrc_credentials.sh)
+
+### Serving up a static page
+1. Create an S3 bucket with default settings.
+2. Enable static website hosting in the properties tab.
+3. Create a `public/index.html`
+4. run `npm install http-server -g` to install http-server globally.
+5. Then run `http-server`
