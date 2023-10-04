@@ -225,3 +225,29 @@ We have automated the terraform login process using the bash script:
 3. Create a `public/index.html`
 4. run `npm install http-server -g` to install http-server globally.
 5. Then run `http-server`
+
+### Upload a local file to an AWS S3 bucket
+
+`aws s3 cp test.txt s3://mybucket/test2.txt`
+
+You will then see an output like this:
+
+```bash
+Completed 17 Bytes/17 Bytes (40 Bytes/s) with 1 file(s) rupload: public/index.html to s3://bucket-name/index.html
+```
+
+### Accessing statically-hosted webpage
+
+There will be a link to the page created by S3, under `properties`.
+
+However, there will be a 403 error when accessing this page. This is because, by default, the `permissions` block public access. 
+
+While it is possible to create a bucket policy to allow public access, this is not the recommended method.
+
+The recommended method, is to create a `CloudFront Distribution`. This is a CDN which creates a copy of our website, and caches it to a bunch of computers around the world. Then it serves the webpage (which is really the `index.html` file), from a computer which is near to the computer that accessed it. 
+
+Even after creating the CDN, opening the link created by the CDN will lead to a 403 Forbidden error.
+
+That is because, an OAC (Origin Access Control) and Bucket Policy need to be created.
+
+To create an OAC, go to CloudFront, and open up Security/Origin Access on the left side menu. Here, a new OAC can be created. 
