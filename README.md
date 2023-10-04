@@ -1,6 +1,14 @@
 # Terraform Beginner Bootcamp 2023
 
-## Semantic Versioning :mage: :mage:
+## Table of Contents
+
+- [Semantic Versioning](#semantic-versioning-mage)
+- [General Git Workflow](#general-workflow-needs-to-be-updated)
+- [Installing the Terraform CLI](#install-the-terraform-cli)
+    - [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
+    
+
+## Semantic Versioning :mage: 
 
 This project will utilize semantic versioning for its tagging.
 
@@ -251,3 +259,6 @@ Even after creating the CDN, opening the link created by the CDN will lead to a 
 That is because, an OAC (Origin Access Control) and Bucket Policy need to be created.
 
 To create an OAC, go to CloudFront, and open up Security/Origin Access on the left side menu. Here, a new OAC can be created. 
+
+
+https://developer.hashicorp.com/terraform/language/modules/develop/structure
