@@ -104,7 +104,7 @@ We need to be careful when using `Init` because it does not re-run when opening 
 #### env command
 We can list out all environment variables (env vars) using the `env` command
 
-We can filter specific env vars using grep eg. `env | greo AWS_`
+We can filter specific env vars using grep eg. `env | grep AWS_`
 
 #### Setting and unsetting env vars
 
