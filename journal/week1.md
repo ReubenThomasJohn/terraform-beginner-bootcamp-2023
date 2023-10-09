@@ -151,3 +151,18 @@ resource "aws_s3_object" "index_html" {
   source = "${path.root}/public/index.html"
 }
 ```
+
+### Terraform Locals
+They allow us to define local variables.
+It can be very useful when we need to transform data into another format and have it referenced as a variable. 
+
+
+### Data Sources
+
+This allows us to source data from cloud resources. It is useful when we want to reference cloud resources without importing them.
+
+[Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
+
+### Working with JSON
+
+`jsonencode` is a terraform function to add JSON data in-line in the hcl.
