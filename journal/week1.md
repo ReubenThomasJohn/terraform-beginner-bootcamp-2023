@@ -166,3 +166,7 @@ This allows us to source data from cloud resources. It is useful when we want to
 ### Working with JSON
 
 `jsonencode` is a terraform function to add JSON data in-line in the hcl.
+
+### Changing the lifecycle of a resource
+
+[Meta Arguments](https://developer.hashicorp.com/terraform/tutorials/state/resource-lifecycle)
