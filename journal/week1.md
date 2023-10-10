@@ -170,3 +170,18 @@ This allows us to source data from cloud resources. It is useful when we want to
 ### Changing the lifecycle of a resource
 
 [Meta Arguments](https://developer.hashicorp.com/terraform/tutorials/state/resource-lifecycle)
+
+## Provisioners
+
+Provisioners allow to execute commands on compute instances eg. a AWS CLI command. 
+
+They are not recommended for use by Hashicorp because Configuration Management tools like Ansible are a better fit, but the functionality still exists. 
+
+### Local-exec
+
+This will execute a command on the machine running the terraform commands.
+eg. terraform plan, tf apply.
+
+### Remote-exec
+
+This will execute commands on a machine which you target. You need to provide credentials to access the targeted machine. 
