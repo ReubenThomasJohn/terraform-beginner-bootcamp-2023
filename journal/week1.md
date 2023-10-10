@@ -185,3 +185,11 @@ eg. terraform plan, tf apply.
 ### Remote-exec
 
 This will execute commands on a machine which you target. You need to provide credentials to access the targeted machine. 
+
+## For Each Expressions
+
+This can be used for a lot of cases, and is very important to be good at.
+It allows us to enumerate over complex data structures.
+It is mostly useful when creating multiples of a cloud resource and want to reduce that amount of repetitive terraform code. 
+
+[For each expressions](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)
