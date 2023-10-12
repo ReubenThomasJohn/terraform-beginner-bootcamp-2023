@@ -6,7 +6,11 @@ import (
 	"encoding/json"
 	"net/http"
 	"log"
+	"context"	
+	"log"
 	"fmt"
+	"github.com/google/uuid"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
@@ -20,11 +24,6 @@ func main() {
 	fmt.Println("Hello, world!")	
 }
 
-type Config struct {
-	Endpoint string
-	Token string
-	UserUuid string
-}
 // In golang, a titlecase function will get exported
 func Provider() *schema.Provider {
 	var p *schema.Provider
