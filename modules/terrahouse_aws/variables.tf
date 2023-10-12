@@ -8,14 +8,16 @@ variable "user_uuid" {
   }
 }
 
-variable "bucket_name" {
-  type        = string
-  description = "Name of the AWS S3 bucket"
-  # validation {
-  #   condition     = regex("^([a-z0-9.-]+)$", var.bucket_name)
-  #   error_message = "Invalid bucket name. The name must consist of lowercase letters, numbers, hyphens, and periods, and must start and end with a lowercase letter or number."
-  # }
-}
+# variable "bucket_name" {
+#   type        = string
+#   description = "Name of the AWS S3 bucket"
+#   # validation {
+#   #   condition     = regex("^([a-z0-9.-]+)$", var.bucket_name)
+#   #   error_message = "Invalid bucket name. The name must consist of lowercase letters, numbers, hyphens, and periods, and must start and end with a lowercase letter or number."
+#   # }
+# }
+
+
 
 variable "index_html_filepath" {
   type        = string
