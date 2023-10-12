@@ -24,7 +24,7 @@ provider "terratowns" {
 # }
 
 resource "terratowns_home" "home" {
-  name = "Tips to playing Arcanum!!!"
+  name = "How to play LoL!"
   description = <<DESCRIPTION
 Arcanum is a game from 2001 that shipped with alot of bugs.
 Modders have removed all the original issues, making this game
