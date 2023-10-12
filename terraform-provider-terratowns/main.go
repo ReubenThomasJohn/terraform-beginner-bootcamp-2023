@@ -4,11 +4,12 @@ package main
 
 // fmt is short format, it contains functions for formatted I/O.
 import (
-	"context"	
+	"bytes"
+	"context"
+	"encoding/json"
+	"net/http"
 	"log"
 	"fmt"
-	"github.com/google/uuid"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/google/uuid"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
@@ -30,7 +31,8 @@ type Config struct {
 	Token string
 	UserUuid string
 }
-// In golang, a titlecase function will get exported
+
+// in golang, a titlecase function will get exported.
 func Provider() *schema.Provider {
 	var p *schema.Provider
 	p = &schema.Provider{
@@ -94,6 +96,33 @@ func Resource() *schema.Resource {
 		ReadContext: resourceHouseRead,
 		UpdateContext: resourceHouseUpdate,
 		DeleteContext: resourceHouseDelete,
+		Schema: map[string]*schema.Schema{
+			"name": {
+				Type: schema.TypeString,
+				Required: true,
+				Description: "Name of home",
+			},
+			"description": {
+				Type: schema.TypeString,
+				Required: true,
+				Description: "Description of home",
+			},
+			"domain_name": {
+				Type: schema.TypeString,
+				Required: true,
+				Description: "Domain name of home eg. *.cloudfront.net",
+			},
+			"town": {
+				Type: schema.TypeString,
+				Required: true,
+				Description: "The town to which the home will belong to",
+			},
+			"content_version": {
+				Type: schema.TypeInt,
+				Required: true,
+				Description: "The content version of the home",
+			},
+		},
 	}
 	log.Print("Resource:start")
 	return resource
