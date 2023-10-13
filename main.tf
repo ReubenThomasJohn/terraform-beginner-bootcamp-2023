@@ -5,6 +5,14 @@ terraform {
         version = "1.0.0"
     }
   }
+
+
+  cloud {
+    organization = "terraform-beginners-bootcamp"
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
 }
 
 provider "terratowns" {
@@ -23,12 +31,13 @@ module "terrahouse_aws" {
 }
 
 resource "terratowns_home" "home" {
-  name = "Lionel Messi"
+  name = "My Love for Music"
   description = <<DESCRIPTION
-Mionel Lessi is ...
+I absolutely love music. In this page, I talk about music, why I like music, my favourite artists, and even 
+link you to some of my favourite songs
   DESCRIPTION
   domain_name = module.terrahouse_aws.cloudfront_url
   # domain_name = "3fdq3gzzz.cloudfront.net"
-  town = "missingo"
+  town = "melomaniac mansion"
   content_version = 1
 }
