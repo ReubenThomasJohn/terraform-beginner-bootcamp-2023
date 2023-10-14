@@ -17,7 +17,7 @@ variable "music" {
   })
 }
 
-variable "chess" {
+variable "trek" {
   type = object({
     public_path = string
     content_version = number

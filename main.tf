@@ -44,21 +44,21 @@ link you to some of my favourite songs
   content_version = var.music.content_version
 }
 
-module "home_chess_hosting" {
+module "home_trek_hosting" {
     source = "./modules/terrahome_aws"
     user_uuid = var.teacherseat_user_uuid
-    public_path = var.chess.public_path
-    content_version = var.chess.content_version
+    public_path = var.trek.public_path
+    content_version = var.trek.content_version
 }
 
-resource "terratowns_home" "home_chess" {
-  name = "Chess is awesome"
+resource "terratowns_home" "home_trek" {
+  name = "The Valley of Flowers - India"
   description = <<DESCRIPTION
-Chess is amazing. 
+Wonderful Trek. 
   DESCRIPTION
-  domain_name = module.home_chess_hosting.domain_name
+  domain_name = module.home_trek_hosting.domain_name
   # domain_name = "3fdq3gzzz.cloudfront.net"
-  # town = "the-nomad-pad"
-  town = "missingo"
+  town = "the-nomad-pad"
+  # town = "missingo"
   content_version = var.music.content_version
 }
