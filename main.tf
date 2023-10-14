@@ -37,7 +37,7 @@ resource "terratowns_home" "home_music" {
   description = <<DESCRIPTION
 I absolutely love music. In this page, I talk about music, why I like music, my favourite artists, and even 
 link you to some of my favourite songs
-  DESCRIPTION
+DESCRIPTION
   domain_name = module.home_music_hosting.domain_name
   # domain_name = "3fdq3gzzz.cloudfront.net"
   town = "melomaniac-mansion"
